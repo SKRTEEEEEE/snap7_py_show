@@ -4,8 +4,6 @@
 
 Si estás usando **PLCSIM** y el **ping falla**, el problema es que el PLC SIMULADO no está accesible desde tu red. Aquí hay algunas soluciones específicas para esto:  
 
----
-
 ### 🔍 **1. Verifica que el Adaptador de Red Virtual de PLCSIM esté activo**  
 PLCSIM Advanced crea una **interfaz de red virtual** para la simulación. Verifica en **Panel de Control → Centro de redes y recursos compartidos → Cambiar configuración del adaptador** si hay un adaptador de red con un nombre tipo **"PLCSIM Virtual Adapter"**.  
 
@@ -62,3 +60,24 @@ plc.connect(IP, 0, 1)
 - **NetToPLCSim** soluciona esto al actuar como un puente entre PLCSIM y la red.  
 - **Una vez configurado, Snap7 puede conectarse normalmente.**  
 
+
+
+## Uso NetToPLCSIM
+
+Para configurar NetToPLCSIM es importante ser cuidadoso con los pasos a seguir, ya que es muy probable acabar con diferentes errores.
+
+### Arrancar PLCSIM + NetToPLCSIM
+- Iniciar simulación en Tia Portal
+- Asegurarnos de que nos aparezca la pestaña de cargar, indicando que cargamos con coherencia.
+- Asegurarnos de que en el PLCSIM, en la pestaña de opciones, nos aparezca la opción de `PLCSIM(TCP/IP)`
+- Con la PLCSIM sin iniciar todavía (STOP), en NetToPLCSIM, le damos a `Add`
+- Seleccionamos nuestra red en el apartado de Network IP Address, para ello, hacemos click en el botón `...`
+- Seleccionamos nuestra PLC en el apartado de Plcsim IP Address, para ello, hacemos click en el botón `...`
+- Una vez configurado, podemos arrancar nuestra PLC y nuestro puente de NetToPLCSIM.
+### Detectar y configurar IP de conexión
+Para detectar la IP donde se ha configurado nuestro PLC, podemos ejecutar el siguiente comando:
+   ```sh
+   netstat -an | findstr :102
+   ```
+
+Exponiendo asi nuestras IPs que escuchan en el puerto 102 (Indicado en el NetToPLCSIM).

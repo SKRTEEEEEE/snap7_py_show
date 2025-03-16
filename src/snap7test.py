@@ -2,9 +2,7 @@ import time
 import snap7
 
 
-# IP = '192.168.1.1'
 ## Ip donde se esta simulando o donde se encuentra la PLC física
-# IP = '192.168.1.10'
 IP = "192.168.165.218"
 ## Rack donde esta dicha PLC
 RACK = 0
