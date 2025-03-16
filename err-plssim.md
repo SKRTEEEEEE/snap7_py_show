@@ -62,7 +62,7 @@ plc.connect(IP, 0, 1)
 
 
 
-## Uso NetToPLCSIM
+## Uso NetToPLCSIM v1
 
 Para configurar NetToPLCSIM es importante ser cuidadoso con los pasos a seguir, ya que es muy probable acabar con diferentes errores.
 
@@ -70,6 +70,8 @@ Para configurar NetToPLCSIM es importante ser cuidadoso con los pasos a seguir, 
 - Iniciar simulación en Tia Portal
 - Asegurarnos de que nos aparezca la pestaña de cargar, indicando que cargamos con coherencia.
 - Asegurarnos de que en el PLCSIM, en la pestaña de opciones, nos aparezca la opción de `PLCSIM(TCP/IP)`
+  - Si nos aparece la configuración como en la siguiente imagen (ERROR), debemos reiniciar.
+      ##### ![imagen error](./public/img/err-plcsim/netToPLCSIM-error-conexion.png)
 - Con la PLCSIM sin iniciar todavía (STOP), en NetToPLCSIM, le damos a `Add`
 - Seleccionamos nuestra red en el apartado de Network IP Address, para ello, hacemos click en el botón `...`
 - Seleccionamos nuestra PLC en el apartado de Plcsim IP Address, para ello, hacemos click en el botón `...`
@@ -81,3 +83,27 @@ Para detectar la IP donde se ha configurado nuestro PLC, podemos ejecutar el sig
    ```
 
    Exponiendo asi nuestras IPs que escuchan en el puerto 102 (Indicado en el NetToPLCSIM).
+
+## Uso NetToPLCSIM v2
+- Comprobar que nuestra interface PG/PC este en PLCSIM.PCPIP.1, en windows podemos: `Panel de Control > PG/PC Interface` o `Panel de Control > Ajustar interface PG/PC`
+- Iniciar simulación, cargar y asegurar-nos que nos aparezca la opción de `PLCSIM(TCP/IP)` (Probablemente aparezca después del siguiente paso)
+- Ejecutar NetToPLCSIM como administrador
+  - Si nos aparece como la configuración [como la anterior imagen](#imagen-error) ->
+  - Cerramos PLCSIM
+  - Configuramos NetToPLCSIM
+### Version 1
+- Click en el botón `Add`
+- En el campo 'Plcsim IP Address', ponemos nuestra IP, podemos verla usando `ipconfig` en el campo 'Dirección IPv4'
+- En el campo 'Network IP Address', ponemos 127.0.0.1
+- Arrancamos el servidor que acabamos de crear en NetToPLCSIM
+- Iniciamos de nuevo la simulación de nuestra PLCSIM
+
+### [Version 2](#uso-nettoplcsim-v1)
+### Switch
+Se puede hacer switch entre ambas configuraciones.
+### Both
+Se puede tener ambas configuraciones a la vez, con la limitación de que cuando iniciemos uno de los dos servidores en NetToPLCSIM, se activaran ambos. Esto nos permite consultar ambas IPs.
+
+   ![both ports](./public/img/err-plcsim/both-ports.png)
+
+

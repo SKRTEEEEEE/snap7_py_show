@@ -3,7 +3,7 @@ import snap7
 
 
 ## Ip donde se esta simulando o donde se encuentra la PLC física
-IP = "192.168.165.218"
+IP = "127.0.0.1"
 ## Rack donde esta dicha PLC
 RACK = 0
 ## Slot donde se encuentra la PLC dentro del rack, por defecto será 2 ya que la 1 queda reservada para la alimentación
