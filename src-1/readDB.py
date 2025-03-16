@@ -22,7 +22,7 @@ def readDB():
     # 2. Read PLC data
     plc_info = plc.get_cpu_info()
     plc_Type = plc_info.ModuleTypeName.decode('UTF-8').strip('\x00')
-    #print(f'Module Type: {plc_info.ModuleTypeName}')
+    print(f'Module Type: {plc_info.ModuleTypeName}')
     plc_state = plc.get_cpu_state()
     # print(f'State:{plc_state}')
 

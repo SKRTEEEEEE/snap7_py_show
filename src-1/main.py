@@ -9,7 +9,7 @@ class mainFormReadDB:
     def __init__(self):
         super().__init__()
         # Cargar el archivo .ui
-        self.ui = QUiLoader().load(QFile("C:/Users/Laptop/Code/automation/jauz25/snap7_test/src/main_window.ui"))
+        self.ui = QUiLoader().load(QFile("C:/Users/Laptop/Code/automation/jauz25/snap7_test/main_window.ui"))
         
         # Conectar el botón con la función de lectura
         self.ui.btnRead.clicked.connect(self.read)

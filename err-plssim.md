@@ -80,4 +80,4 @@ Para detectar la IP donde se ha configurado nuestro PLC, podemos ejecutar el sig
    netstat -an | findstr :102
    ```
 
-Exponiendo asi nuestras IPs que escuchan en el puerto 102 (Indicado en el NetToPLCSIM).
+   Exponiendo asi nuestras IPs que escuchan en el puerto 102 (Indicado en el NetToPLCSIM).
